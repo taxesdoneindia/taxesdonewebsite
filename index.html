@@ -28,7 +28,6 @@
       color: var(--text-dark);
     }
 
-    /* FULL-WIDTH PAGE WRAPPER */
     .page {
       width: 100%;
       display: flex;
@@ -36,7 +35,6 @@
       padding: 40px 0;
     }
 
-    /* CONTENT COLUMN (NOT CENTERED LIKE A DOC) */
     .content {
       width: 100%;
       max-width: 1100px;
@@ -45,12 +43,7 @@
 
     /* HEADER */
     .header {
-      background: linear-gradient(
-        135deg,
-        #000000 0%,
-        #111111 70%,
-        #1a1a1a 100%
-      );
+      background: linear-gradient(135deg, #000 0%, #111 70%, #1a1a1a 100%);
       padding: 50px 40px 36px;
       border-radius: 14px;
     }
@@ -73,34 +66,28 @@
     .divider {
       width: 72px;
       height: 2px;
-      background: linear-gradient(
-        to right,
-        transparent,
-        var(--gold),
-        transparent
-      );
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
     }
 
     /* PANELS */
-    .panel {
-      background: var(--panel-bg);
-      padding: 32px 36px;
-      border-radius: 12px;
-      margin-top: 28px;
-      max-width: 760px;        /* readable width */
-    }
-
-    /* Left anchored, not centered */
     .panel-wrap {
       display: flex;
       justify-content: flex-start;
     }
 
+    .panel {
+      background: var(--panel-bg);
+      padding: 32px 36px;
+      border-radius: 12px;
+      margin-top: 28px;
+      max-width: 900px;
+    }
+
     .section-title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 600;
       color: var(--gold);
-      margin-bottom: 14px;
+      margin-bottom: 18px;
     }
 
     .panel p {
@@ -111,20 +98,60 @@
       text-align: justify;
     }
 
+    /* SERVICES GRID */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .service-box {
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 22px 22px;
+      background: #ffffff;
+    }
+
+    .service-box h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .service-box h4 {
+      font-size: 14.5px;
+      font-weight: 600;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+
+    .service-box p {
+      font-size: 14.5px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+      text-align: justify;
+    }
+
+    .service-box ul {
+      padding-left: 18px;
+      margin-bottom: 8px;
+    }
+
+    .service-box ul li {
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+
     footer {
       margin-top: 40px;
       font-size: 12px;
       color: #c9c9c9;
       max-width: 760px;
-    }
-
-    @media (max-width: 900px) {
-      .panel {
-        max-width: 100%;
-      }
-      footer {
-        max-width: 100%;
-      }
     }
   </style>
 </head>
@@ -147,23 +174,103 @@
           <div class="section-title">About Us</div>
 
           <p>
-            At <strong>Taxes Done</strong>, we believe that expert consulting should be accessible,
-            reliable, and affordable for all. Based in Coimbatore, Tamil Nadu, and serving clients
-            across India, we specialize in tax, corporate, and assurance services that help
-            individuals and enterprises thrive.
+            At <strong>Taxes Done</strong>, we provide professional tax, corporate, and assurance
+            services to individuals, professionals, and enterprises. Based in Coimbatore, Tamil
+            Nadu, and serving clients across India, our practice focuses on delivering practical,
+            compliant, and value-driven advisory solutions.
           </p>
 
           <p>
-            Our strength lies in a network of experienced and qualified professionals — including
-            Chartered Accountants, Cost Accountants, Company Secretaries, Advocates, and industry
-            experts — who collaborate as consultants to deliver insightful, ethical, and practical
-            solutions tailored to each client’s needs.
+            Our firm operates through a network of experienced and qualified professionals,
+            including Chartered Accountants, Cost Accountants, Company Secretaries, Advocates,
+            and industry specialists.
           </p>
+        </div>
+      </div>
 
-          <p>
-            Every engagement is approached with a strong commitment to understanding our clients’
-            businesses, ensuring trusted advice and measurable value at every step.
-          </p>
+      <!-- SERVICES -->
+      <div class="panel-wrap">
+        <div class="panel">
+          <div class="section-title">Services</div>
+
+          <div class="services-grid">
+
+            <!-- SERVICE GROUP 1 -->
+            <div class="service-box">
+              <h3>Corporate & Regulatory Advisory</h3>
+              <p>
+                We assist businesses in establishing robust governance frameworks, ensuring
+                regulatory compliance, and implementing effective operational processes.
+              </p>
+
+              <h4>Entity Formation and Corporate Advisory</h4>
+              <ul>
+                <li>Advisory on legal and organisational structuring</li>
+                <li>Incorporation and statutory registrations</li>
+                <li>Drafting and standardisation of governance documents</li>
+                <li>Start-up and growth-stage governance advisory</li>
+              </ul>
+
+              <h4>Compliance with Process Enablement</h4>
+              <ul>
+                <li>Integrated compliance under Companies, LLP, tax and labour laws</li>
+                <li>Ongoing statutory filings and regulatory reporting</li>
+                <li>Regulatory interpretation and implementation advisory</li>
+                <li>SOPs, workflows, and compliance monitoring frameworks</li>
+              </ul>
+            </div>
+
+            <!-- SERVICE GROUP 2 -->
+            <div class="service-box">
+              <h3>Taxation Services</h3>
+              <p>
+                Comprehensive direct and indirect tax advisory across the tax lifecycle, with
+                focus on risk management and regulatory certainty.
+              </p>
+
+              <h4>Direct Tax (Income Tax)</h4>
+              <ul>
+                <li>Tax planning and transaction structuring</li>
+                <li>End-to-end income tax compliance</li>
+                <li>Assessments, audits, appeals and litigation support</li>
+                <li>International taxation and NRI advisory</li>
+              </ul>
+
+              <h4>Indirect Tax (GST)</h4>
+              <ul>
+                <li>GST registrations, filings, refunds and reconciliations</li>
+                <li>Classification, valuation and ITC advisory</li>
+                <li>GST audits, investigations and dispute resolution</li>
+                <li>GST health checks and impact analysis</li>
+              </ul>
+            </div>
+
+            <!-- SERVICE GROUP 3 -->
+            <div class="service-box">
+              <h3>Assurance & Business Advisory</h3>
+              <p>
+                Independent assurance and advisory services to strengthen governance, controls,
+                and operational effectiveness.
+              </p>
+
+              <h4>Internal Audit and Risk Advisory</h4>
+              <ul>
+                <li>Risk-based internal audits</li>
+                <li>Internal control evaluation and remediation</li>
+                <li>Risk identification and mitigation advisory</li>
+                <li>Special and thematic audits</li>
+              </ul>
+
+              <h4>Process Implementation</h4>
+              <ul>
+                <li>Process and internal control framework design</li>
+                <li>SOP development and documentation</li>
+                <li>Process optimisation and governance advisory</li>
+                <li>Management reporting and monitoring advisory</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </div>
 
@@ -184,8 +291,8 @@
             Coimbatore, Tamil Nadu – 641019, India
           </p>
 
-          <p><strong>Mobile No:</strong> +91 909 555 2442</p>
-          <p><strong>Email ID:</strong> support@taxesdone.in</p>
+          <p><strong>Mobile:</strong> +91 909 555 2442</p>
+          <p><strong>Email:</strong> support@taxesdone.in</p>
         </div>
       </div>
 
