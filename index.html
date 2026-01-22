@@ -14,31 +14,36 @@
     }
 
     :root {
-      --gold: #C9A227;        /* Muted premium gold */
-      --gold-dark: #B08D1A;   /* Slightly deeper accent */
+      --gold: #C9A227;
       --dark-bg: #0f0f0f;
       --panel-bg: #ffffff;
       --text-dark: #1f2933;
       --text-muted: #374151;
       --border-light: #e5e7eb;
-      --logo-bg: #f7f2dd;     /* Champagne background */
+      --logo-bg: #f7f2dd;
     }
 
     body {
-      min-height: 100vh;
       background: var(--dark-bg);
-      display: flex;
-      justify-content: center;
-      padding: 40px 16px;
       color: var(--text-dark);
     }
 
-    .container {
-      max-width: 760px;
+    /* FULL-WIDTH PAGE WRAPPER */
+    .page {
       width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 40px 0;
     }
 
-    /* Header */
+    /* CONTENT COLUMN (NOT CENTERED LIKE A DOC) */
+    .content {
+      width: 100%;
+      max-width: 1100px;
+      padding: 0 32px;
+    }
+
+    /* HEADER */
     .header {
       background: linear-gradient(
         135deg,
@@ -46,12 +51,10 @@
         #111111 70%,
         #1a1a1a 100%
       );
-      padding: 48px 20px 34px;
-      text-align: center;
-      border-radius: 14px 14px 0 0;
+      padding: 50px 40px 36px;
+      border-radius: 14px;
     }
 
-    /* Logo container */
     .logo-box {
       display: inline-block;
       background: var(--logo-bg);
@@ -76,15 +79,21 @@
         var(--gold),
         transparent
       );
-      margin: 0 auto;
     }
 
-    /* Content panels */
+    /* PANELS */
     .panel {
       background: var(--panel-bg);
-      padding: 28px 26px;
-      border-radius: 10px;
-      margin-top: 26px;
+      padding: 32px 36px;
+      border-radius: 12px;
+      margin-top: 28px;
+      max-width: 760px;        /* readable width */
+    }
+
+    /* Left anchored, not centered */
+    .panel-wrap {
+      display: flex;
+      justify-content: flex-start;
     }
 
     .section-title {
@@ -94,99 +103,98 @@
       margin-bottom: 14px;
     }
 
-    /* About */
-    .about {
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    .about p {
+    .panel p {
       font-size: 15px;
       line-height: 1.85;
       margin-bottom: 16px;
       color: var(--text-muted);
       text-align: justify;
-      text-justify: inter-word;
-    }
-
-    /* Legal */
-    .details {
-      max-width: 620px;
-      margin: 0 auto;
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--text-dark);
     }
 
     footer {
-      text-align: center;
+      margin-top: 40px;
       font-size: 12px;
       color: #c9c9c9;
-      margin-top: 30px;
+      max-width: 760px;
+    }
+
+    @media (max-width: 900px) {
+      .panel {
+        max-width: 100%;
+      }
+      footer {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="page">
+    <div class="content">
 
-    <!-- Header -->
-    <div class="header">
-      <div class="logo-box">
-        <img src="logo.png" alt="Taxes Done Logo">
+      <!-- HEADER -->
+      <div class="header">
+        <div class="logo-box">
+          <img src="logo.png" alt="Taxes Done Logo">
+        </div>
+        <div class="divider"></div>
       </div>
-      <div class="divider"></div>
+
+      <!-- ABOUT US -->
+      <div class="panel-wrap">
+        <div class="panel">
+          <div class="section-title">About Us</div>
+
+          <p>
+            At <strong>Taxes Done</strong>, we believe that expert consulting should be accessible,
+            reliable, and affordable for all. Based in Coimbatore, Tamil Nadu, and serving clients
+            across India, we specialize in tax, corporate, and assurance services that help
+            individuals and enterprises thrive.
+          </p>
+
+          <p>
+            Our strength lies in a network of experienced and qualified professionals — including
+            Chartered Accountants, Cost Accountants, Company Secretaries, Advocates, and industry
+            experts — who collaborate as consultants to deliver insightful, ethical, and practical
+            solutions tailored to each client’s needs.
+          </p>
+
+          <p>
+            Every engagement is approached with a strong commitment to understanding our clients’
+            businesses, ensuring trusted advice and measurable value at every step.
+          </p>
+        </div>
+      </div>
+
+      <!-- LEGAL -->
+      <div class="panel-wrap">
+        <div class="panel">
+          <div class="section-title">Legal Information</div>
+
+          <p><strong>Legal Name:</strong> Taxes Done Consultants Private Limited</p>
+          <p><strong>CIN:</strong> U62099TZ2025PTC036569</p>
+          <p><strong>GSTIN:</strong> 33AAMCT4343G1ZC</p>
+
+          <p><strong>Registered Office</strong></p>
+          <p>
+            Sf. No. 320/3, Site No. 47<br>
+            Sri Lakshmi Illam<br>
+            R.M. Gardens, No: 4 Veerapandi<br>
+            Coimbatore, Tamil Nadu – 641019, India
+          </p>
+
+          <p><strong>Mobile No:</strong> +91 909 555 2442</p>
+          <p><strong>Email ID:</strong> support@taxesdone.in</p>
+        </div>
+      </div>
+
+      <footer>
+        © 2026 Taxes Done Consultants Private Limited. All rights reserved.<br>
+        This website is for informational purposes only.
+      </footer>
+
     </div>
-
-    <!-- About Us -->
-    <div class="panel about">
-      <div class="section-title">About Us</div>
-
-      <p>
-        At <strong>Taxes Done</strong>, we believe that expert consulting should be accessible,
-        reliable, and affordable for all. Based in Coimbatore, Tamil Nadu, and serving clients
-        across India, we specialize in tax, corporate, and assurance services that help
-        individuals and enterprises thrive.
-      </p>
-
-      <p>
-        Our strength lies in a network of experienced and qualified professionals — including
-        Chartered Accountants, Cost Accountants, Company Secretaries, Advocates, and industry
-        experts — who collaborate as consultants to deliver insightful, ethical, and practical
-        solutions tailored to each client’s needs.
-      </p>
-
-      <p>
-        Every engagement is approached with a strong commitment to understanding our clients’
-        businesses, ensuring trusted advice and measurable value at every step.
-      </p>
-    </div>
-
-    <!-- Legal Information -->
-    <div class="panel details">
-      <div class="section-title">Legal Information</div>
-
-      <p><strong>Legal Name:</strong> Taxes Done Consultants Private Limited</p>
-      <p><strong>CIN:</strong> U62099TZ2025PTC036569</p>
-      <p><strong>GSTIN:</strong> 33AAMCT4343G1ZC</p>
-
-      <p style="margin-top: 12px;"><strong>Registered Office</strong></p>
-      <p>
-        Sf. No. 320/3, Site No. 47<br>
-        Sri Lakshmi Illam<br>
-        R.M. Gardens, No: 4 Veerapandi<br>
-        Coimbatore, Tamil Nadu – 641019, India
-      </p>
-
-      <p style="margin-top: 12px;"><strong>Mobile No:</strong> +91 909 555 2442</p>
-      <p><strong>Email ID:</strong> support@taxesdone.in</p>
-    </div>
-
-    <footer>
-      © 2026 Taxes Done Consultants Private Limited. All rights reserved.<br>
-      This website is for informational purposes only.
-    </footer>
-
   </div>
 </body>
 </html>
