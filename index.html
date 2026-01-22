@@ -43,19 +43,27 @@
 
     /* HEADER */
     .header {
+      display: flex;
+      align-items: center;
+      gap: 40px;
       background: linear-gradient(135deg, #000 0%, #111 70%, #1a1a1a 100%);
-      padding: 50px 40px 36px;
+      padding: 50px 40px;
       border-radius: 14px;
     }
 
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     .logo-box {
-      display: inline-block;
       background: var(--logo-bg);
       padding: 18px 28px;
       border-radius: 14px;
       border: 2px solid var(--gold);
       box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-      margin-bottom: 18px;
+      margin-bottom: 12px;
     }
 
     .logo-box img {
@@ -70,7 +78,6 @@
     }
 
     .hero-text {
-      margin-top: 28px;
       max-width: 520px;
     }
 
@@ -167,6 +174,11 @@
     }
 
     @media (max-width: 900px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       .legal-contact-row {
         grid-template-columns: 1fr;
       }
@@ -187,10 +199,12 @@
 
       <!-- HEADER -->
       <div class="header">
-        <div class="logo-box">
-          <img src="logo.png" alt="Taxes Done Logo">
+        <div class="header-left">
+          <div class="logo-box">
+            <img src="logo.png" alt="Taxes Done Logo">
+          </div>
+          <div class="divider"></div>
         </div>
-        <div class="divider"></div>
 
         <div class="hero-text">
           <div class="hero-title">Business and Tax Advisory Services</div>
@@ -237,15 +251,9 @@
 
           <div class="services-stack">
 
-            <!-- SERVICE GROUP 1 -->
             <div class="service-box">
               <h3>Corporate & Regulatory Advisory</h3>
-              <p>
-                We provide corporate and regulatory advisory services to assist businesses in
-                establishing robust governance frameworks, ensuring regulatory compliance, and
-                implementing effective operational processes.
-              </p>
-
+              <p>We provide corporate and regulatory advisory services to assist businesses in establishing robust governance frameworks, ensuring regulatory compliance, and implementing effective operational processes.</p>
               <h4>Entity Formation and Corporate Advisory</h4>
               <ul>
                 <li>Advisory on the selection and establishment of appropriate legal and organisational structures, including companies, LLPs, partnerships, and proprietorships</li>
@@ -253,7 +261,6 @@
                 <li>Drafting, review, and standardisation of constitutional documents, partnership deeds, and internal governance documentation</li>
                 <li>Advisory support to start-ups and growing enterprises in establishing baseline corporate governance and compliance frameworks</li>
               </ul>
-
               <h4>Corporate and Regulatory Compliance with Process Enablement</h4>
               <ul>
                 <li>Integrated corporate and regulatory compliance advisory and execution under the Companies Act, LLP Act, tax laws, labour laws, and other applicable commercial regulations</li>
@@ -264,16 +271,9 @@
               </ul>
             </div>
 
-            <!-- SERVICE GROUP 2 -->
             <div class="service-box">
               <h3>Taxation Services</h3>
-              <p>
-                We provide comprehensive direct and indirect tax advisory services, supporting
-                clients across the tax lifecycle through structured advisory, compliance
-                management, and dispute resolution, with a focus on risk management and regulatory
-                certainty.
-              </p>
-
+              <p>We provide comprehensive direct and indirect tax advisory services, supporting clients across the tax lifecycle through structured advisory, compliance management, and dispute resolution, with a focus on risk management and regulatory certainty.</p>
               <h4>Direct Tax (Income Tax) Advisory</h4>
               <ul>
                 <li>Strategic tax advisory including transaction structuring, tax planning, and optimisation for domestic and cross-border transactions</li>
@@ -281,7 +281,6 @@
                 <li>Tax controversy and litigation support, covering assessments, audits, appeals, rectifications, and representation before tax authorities and appellate forums</li>
                 <li>International taxation and NRI advisory, including residential status determination, cross-border income, transfer pricing interface, tax treaty interpretation, and FEMA-aligned compliance</li>
               </ul>
-
               <h4>Indirect Tax (Goods and Services Tax – GST) Advisory</h4>
               <ul>
                 <li>Comprehensive GST advisory and compliance management, covering registrations, periodic filings, refunds, reconciliations, and statutory disclosures</li>
@@ -291,15 +290,9 @@
               </ul>
             </div>
 
-            <!-- SERVICE GROUP 3 -->
             <div class="service-box">
               <h3>Assurance Services</h3>
-              <p>
-                We provide independent assurance and advisory services designed to enhance
-                governance, strengthen internal controls, and improve the effectiveness and
-                efficiency of business operations.
-              </p>
-
+              <p>We provide independent assurance and advisory services designed to enhance governance, strengthen internal controls, and improve the effectiveness and efficiency of business operations.</p>
               <h4>Internal Audit and Risk Advisory</h4>
               <ul>
                 <li>Risk-based internal audit services covering operational, financial, and compliance areas</li>
@@ -307,7 +300,6 @@
                 <li>Risk identification, assessment, and mitigation advisory across key business processes</li>
                 <li>Thematic and special audits, including compliance reviews, process audits, and focused operational assessments</li>
               </ul>
-
               <h4>Process Implementation and Business Advisory</h4>
               <ul>
                 <li>Design and implementation of process frameworks and internal control structures aligned with business and regulatory requirements</li>
@@ -325,7 +317,6 @@
       <div class="panel-wrap">
         <div class="panel">
           <div class="legal-contact-row">
-
             <div>
               <div class="section-title">Legal Information</div>
               <p><strong>Legal Name:</strong> Taxes Done Consultants Private Limited</p>
@@ -345,7 +336,6 @@
               <p><strong>Mobile / WhatsApp:</strong><br>+91 909 555 2442</p>
               <p><strong>Email:</strong><br>support@taxesdone.in</p>
             </div>
-
           </div>
         </div>
       </div>
